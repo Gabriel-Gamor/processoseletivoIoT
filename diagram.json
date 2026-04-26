@@ -1,7 +1,30 @@
 {
   "version": 1,
-  "author": "Uri Shaked",
+  "author": "Gabriel Moreira",
   "editor": "wokwi",
-  "parts": [ { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} } ],
-  "connections": [ [ "esp:TX", "$serialMonitor:RX", "", [] ], [ "esp:RX", "$serialMonitor:TX", "", [] ] ]
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-led", "id": "car_red", "top": -80, "left": 100, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "car_yellow", "top": -40, "left": 100, "attrs": { "color": "yellow" } },
+    { "type": "wokwi-led", "id": "car_green", "top": 0, "left": 100, "attrs": { "color": "green" } },
+    { "type": "wokwi-led", "id": "ped_red", "top": -80, "left": 180, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "ped_green", "top": 0, "left": 180, "attrs": { "color": "green" } },
+    { "type": "wokwi-pushbutton", "id": "btn", "top": 50, "left": 180, "attrs": { "color": "blue" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:15", "car_red:A", "red", [ "v0" ] ],
+    [ "esp:GND.1", "car_red:C", "black", [ "v0" ] ],
+    [ "esp:2", "car_yellow:A", "yellow", [ "v0" ] ],
+    [ "esp:GND.1", "car_yellow:C", "black", [ "v0" ] ],
+    [ "esp:4", "car_green:A", "green", [ "v0" ] ],
+    [ "esp:GND.1", "car_green:C", "black", [ "v0" ] ],
+    [ "esp:17", "ped_red:A", "red", [ "v0" ] ],
+    [ "esp:GND.2", "ped_red:C", "black", [ "v0" ] ],
+    [ "esp:16", "ped_green:A", "green", [ "v0" ] ],
+    [ "esp:GND.2", "ped_green:C", "black", [ "v0" ] ],
+    [ "esp:12", "btn:1.l", "blue", [ "v0" ] ],
+    [ "esp:GND.2", "btn:2.l", "black", [ "v0" ] ]
+  ]
 }
