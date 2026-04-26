@@ -79,8 +79,6 @@ O fluxo resultante é:
 
 Um desafio técnico foi entender o comportamento do pipeline de CI/CD no GitHub Actions. Realizei a leitura dos no GitHub Actions para entender que a falha inicial ocorria por um erro da chave WOKWI_CLI_TOKEN não presente, já que eu tinha colocado o nome de WOKWI_API_KEY como no READ.ME do repositorio base. Outro foi pelo limite de *timeout* devido ao `expect_text` por conta que eu tinha tirado o print inicial que vinha no codigo.
 
-Durante o desenvolvimento, uma das principais dificuldades foi estruturar corretamente a lógica de estados sem gerar transições inconsistentes.
-
 Uma limitação da solução atual é a ausência de um filtro de click mais robusto para o botão, o que poderia ser melhorado em uma versão futura.
 
 Como aprendizado, esse projeto reforçou a importância de organização lógica em sistemas embarcados e o uso de máquina de estados como ferramenta fundamental para controle de fluxo.
