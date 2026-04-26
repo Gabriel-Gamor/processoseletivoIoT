@@ -1,6 +1,9 @@
 from machine import Pin
 import time
 
+# Adicionado apenas para o GitHub Actions validar o código
+print("Teste") 
+
 # Semáforo dos Carros
 car_red = Pin(15, Pin.OUT)
 car_yellow = Pin(2, Pin.OUT)
